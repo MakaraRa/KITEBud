@@ -56,4 +56,15 @@ export const universities: University[] = [
         descriptionEn: "Private university teaching in English.",
         descriptionKm: "សាកលវិទ្យាល័យឯកជនដែលបង្រៀនជាភាសាអង់គ្លេស។",
     },
+    {
+        id: 6,
+        slug: "nubb",
+        nameEn: "National University of Battambang",
+        nameKm: "សាកលវិទ្យាល័យជាតិបាត់ដំបង",
+        province: "Battambang",
+        type: "public",
+        website: "https://nubb.edu.kh/en/",
+        descriptionEn: "Public university in Battambang City serving students in north-west Cambodia.",
+        descriptionKm: "សាកលវិទ្យាល័យសាធារណៈនៅក្រុងបាត់ដំបង ដែលបម្រើនិស្សិតនៅភាគពាយ័ព្យនៃប្រទេសកម្ពុជា។",
+    },
 ];
