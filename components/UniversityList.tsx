@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { University } from "@/types/university";
+import Link from "next/link";
 
 export default function UniversityList({
     universities,
@@ -67,8 +68,11 @@ export default function UniversityList({
                 <ul className="mt-6 space-y-4">
                     {filtered.map((u) => (
                         <li key={u.id} className="rounded border border-green-600 p-4">
-                            <h3 className="text-lg font-semibold">{u.nameEn}</h3>
-                            <p>{u.nameKm}</p>
+                            <h3 className="text-lg font-semibold">
+                                <Link href={`/universities/${u.slug}`} className="text-green-700 hover:underline">
+                                    {u.nameEn}
+                                </Link>
+                            </h3>                            <p>{u.nameKm}</p>
                             <p className="text-sm text-gray-500">
                                 {u.province} · {u.type}
                             </p>
