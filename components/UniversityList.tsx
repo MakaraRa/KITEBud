@@ -59,24 +59,24 @@ export default function UniversityList({
                     <option value="private">Private</option>
                 </select>
             </div>
-            <ul className="mt-6 space-y-4">
-                {filtered.map((u) => (
-                    <li key={u.id} className="rounded border border-green-600 p-4">
-                        <h3 className="text-lg font-semibold">{u.nameEn}</h3>
-                        <p>{u.nameKm}</p>
-                        <p className="text-sm text-gray-500">
-                            {u.province} · {u.type}
-                        </p>
-                    </li>
-                ))}
-                {filtered.length === 0 ? (
-                    <p className="mt-6 text-gray-500">No universities found.</p>
-                ) : (
-                    <ul className="mt-6 space-y-4">
-                        {/* your existing {filtered.map(...)} stays here, unchanged */}
-                    </ul>
-                )}
-            </ul>
+
+
+            {filtered.length === 0 ? (
+                <p className="mt-6 text-gray-500">No universities found.</p>
+            ) : (
+                <ul className="mt-6 space-y-4">
+                    {filtered.map((u) => (
+                        <li key={u.id} className="rounded border border-green-600 p-4">
+                            <h3 className="text-lg font-semibold">{u.nameEn}</h3>
+                            <p>{u.nameKm}</p>
+                            <p className="text-sm text-gray-500">
+                                {u.province} · {u.type}
+                            </p>
+                        </li>
+                    ))}
+                </ul>
+            )}
+
         </div>
     );
 }
