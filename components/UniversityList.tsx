@@ -15,6 +15,7 @@ export default function UniversityList({
 
     const search = query.toLowerCase();
 
+
     const filtered = universities.filter((u) => {
         const matchesSearch =
             u.nameEn.toLowerCase().includes(search) ||
@@ -68,6 +69,13 @@ export default function UniversityList({
                         </p>
                     </li>
                 ))}
+                {filtered.length === 0 ? (
+                    <p className="mt-6 text-gray-500">No universities found.</p>
+                ) : (
+                    <ul className="mt-6 space-y-4">
+                        {/* your existing {filtered.map(...)} stays here, unchanged */}
+                    </ul>
+                )}
             </ul>
         </div>
     );
