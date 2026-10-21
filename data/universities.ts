@@ -25,7 +25,7 @@ export const universities: University[] = [
     },
     {
         id: 3,
-        slug: "rupp",
+        slug: "norton",
         nameEn: "Norton University",
         nameKm: "សាកលវិទ្យាល័យន័រតុន",
         province: "Phnom Penh",
