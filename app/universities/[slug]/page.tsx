@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { getUniversities, getUniversityBySlug } from "@/lib/universities";
+import SaveButton from "@/components/SaveButton";
 
 export function generateStaticParams() {
     return getUniversities().map((u) => ({ slug: u.slug }));
@@ -33,6 +34,7 @@ export default async function UniversityPage({
             >
                 Visit website
             </a>
+            <SaveButton kind="university" slug={university.slug} />
         </main>
     );
 }
