@@ -1,0 +1,43 @@
+import { Scholarship } from "@/types/scholarship";
+
+export const scholarships: Scholarship[] = [
+    {
+        id: 1,
+        slug: "sample-scholarship-1",
+        nameEn: "Sample Scholarship 1",
+        nameKm: "អាហារូបករណ៍គំរូ ១",
+        provider: "Sample provider A",
+        level: "bachelor",
+        coverage: "full",
+        deadline: "varies",
+        website: "https://example.com",
+        descriptionEn: "Sample data for testing. To be replaced with verified information.",
+        descriptionKm: "ទិន្នន័យគំរូសម្រាប់ធ្វើតេស្ត។ នឹងត្រូវជំនួសដោយព័ត៌មានដែលបានផ្ទៀងផ្ទាត់។",
+    },
+    {
+        id: 2,
+        slug: "sample-scholarship-2",
+        nameEn: "Sample Scholarship 2",
+        nameKm: "អាហារូបករណ៍គំរូ ២",
+        provider: "Sample provider B",
+        level: "master",
+        coverage: "partial",
+        deadline: "varies",
+        website: "https://example.com",
+        descriptionEn: "Sample data for testing. To be replaced with verified information.",
+        descriptionKm: "ទិន្នន័យគំរូសម្រាប់ធ្វើតេស្ត។ នឹងត្រូវជំនួសដោយព័ត៌មានដែលបានផ្ទៀងផ្ទាត់។",
+    },
+    {
+        id: 3,
+        slug: "sample-scholarship-3",
+        nameEn: "Sample Scholarship 3",
+        nameKm: "អាហារូបករណ៍គំរូ ៣",
+        provider: "Sample provider C",
+        level: "any",
+        coverage: "full",
+        deadline: "varies",
+        website: "https://example.com",
+        descriptionEn: "Sample data for testing. To be replaced with verified information.",
+        descriptionKm: "ទិន្នន័យគំរូសម្រាប់ធ្វើតេស្ត។ នឹងត្រូវជំនួសដោយព័ត៌មានដែលបានផ្ទៀងផ្ទាត់។",
+    },
+];
