@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import { getScholarships, getScholarshipBySlug } from "@/lib/scholarship";
-import { scholarships } from "@/data/scholarships";
 
 
 export function generateStaticParams() {

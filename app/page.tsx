@@ -6,7 +6,7 @@ import Link from "next/link";
 // "ready: false" means the page doesn't exist yet, so we show "Coming soon"
 const features = [
   { title: "Universities", description: "Browse and compare universities across Cambodia.", href: "/universities", ready: true },
-  { title: "Majors", description: "Explore programs and what you can study.", href: "/majors", ready: false },
+  { title: "Majors", description: "Explore programs and what you can study.", href: "/majors", ready: true },
   { title: "Scholarships", description: "Find scholarships you may qualify for.", href: "/scholarships", ready: true },
   { title: "Find My Major", description: "Not sure what to study? Get guided suggestions.", href: "/find-my-major", ready: false },
   { title: "Try Major", description: "Get a taste of a major before you choose it.", href: "/try-major", ready: false },
