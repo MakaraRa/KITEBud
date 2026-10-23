@@ -5,6 +5,7 @@ const links = [
     { label: "Home", href: "/" },
     { label: "Universities", href: "/universities" },
     { label: "Scholarships", href: "/scholarships" },
+    { label: "Shortlist", href: "/shortlist" },
 ];
 
 export default function Navbar() {
