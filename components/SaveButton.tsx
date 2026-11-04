@@ -1,17 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
-const STORAGE_KEY = "kitebud-shortlist";
-
-function readShortlist(): string[] {
-    try {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        return raw ? JSON.parse(raw) : [];
-    } catch {
-        return [];
-    }
-}
+import { useSyncExternalStore } from "react";
+import {
+    getServerShortlistSnapshot,
+    getShortlistSnapshot,
+    parseShortlist,
+    subscribeToShortlist,
+    writeShortlist,
+} from "@/lib/shortlist";
 
 export default function SaveButton({
     kind,
@@ -21,27 +17,29 @@ export default function SaveButton({
     slug: string;
 }) {
     const id = `${kind}:${slug}`;
-    const [saved, setSaved] = useState(false);
-
-    useEffect(() => {
-        setSaved(readShortlist().includes(id));
-    }, [id]);
+    const snapshot = useSyncExternalStore(
+        subscribeToShortlist,
+        getShortlistSnapshot,
+        getServerShortlistSnapshot,
+    );
+    const saved = snapshot !== null && parseShortlist(snapshot).includes(id);
 
     function toggle() {
-        const list = readShortlist();
+        const list = parseShortlist(getShortlistSnapshot());
         const next = list.includes(id)
             ? list.filter((x) => x !== id)
             : [...list, id];
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
-        setSaved(next.includes(id));
+        writeShortlist(next);
     }
 
     return (
         <button
+            type="button"
             onClick={toggle}
-            className="mt-6 ml-3 rounded border border-green-700 px-4 py-2 text-green-700"
+            aria-pressed={saved}
+            className="mt-6 inline-flex items-center rounded-xl border border-white/40 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
         >
-            {saved ? "Saved ✓" : "Save"}
+            {saved ? "Saved to shortlist" : "Save to shortlist"}
         </button>
     );
 }
